@@ -1,79 +1,83 @@
-# app.py
-import random
 import streamlit as st
+import random
 
-# ---------------- Page setup ---------------- #
-st.set_page_config(
-    page_title="Chakkalakkal Family Trip",
-    page_icon="🎒",
-    layout="centered",
-)
+# --- Page Setup ---
+st.set_page_config(page_title="Kozhikode Family Trip", page_icon="🧳", layout="centered")
 
-# ---------------- Data ---------------- #
-DESTINATIONS = [
+# --- Title ---
+st.title("Chakkalakkal Family Trip")
+st.markdown("Discover beautiful family destinations around Kozhikode and Chakkalakkal. Click below to get a suggestion!")
+
+# --- Destination List ---
+destinations = [
     {
-        "name": "Wayanad",
-        "tagline": "Waterfalls and wildlife",
-        "image": "https://source.unsplash.com/featured/?wayanad",
+        "name": "Kozhikode Beach",
+        "tagline": "Sunset views, street food & kids’ fun zone",
+        "image": "https://source.unsplash.com/featured/?kozhikode,beach"
     },
     {
-        "name": "Munnar",
-        "tagline": "Tea gardens and cool climate",
-        "image": "https://source.unsplash.com/featured/?munnar,tea",
+        "name": "Beypore Port & Beach",
+        "tagline": "Historic port, boating and beach strolls",
+        "image": "https://source.unsplash.com/featured/?beypore,port"
     },
     {
-        "name": "Alappuzha",
-        "tagline": "Houseboat and backwaters",
-        "image": "https://source.unsplash.com/featured/?alappuzha,backwater",
+        "name": "Mananchira Square",
+        "tagline": "A beautiful urban park near the city center",
+        "image": "https://source.unsplash.com/featured/?mananchira,kozhikode"
     },
     {
-        "name": "Coorg",
-        "tagline": "Coffee plantations and hills",
-        "image": "https://source.unsplash.com/featured/?coorg,coffee",
+        "name": "Sarovaram Bio Park",
+        "tagline": "Family-friendly boating and green park",
+        "image": "https://source.unsplash.com/featured/?sarovaram,kozhikode"
     },
     {
-        "name": "Ooty",
-        "tagline": "Lake and botanical gardens",
-        "image": "https://source.unsplash.com/featured/?ooty",
+        "name": "Kadalundi Bird Sanctuary",
+        "tagline": "Birdwatching and peaceful backwaters",
+        "image": "https://source.unsplash.com/featured/?kadalundi,birds"
     },
     {
-        "name": "Mysore",
-        "tagline": "Palace and zoo",
-        "image": "https://source.unsplash.com/featured/?mysore,palace",
+        "name": "Thusharagiri Waterfalls",
+        "tagline": "Cool falls and mini trekking trails",
+        "image": "https://source.unsplash.com/featured/?thusharagiri,waterfalls"
     },
     {
-        "name": "Kodaikanal",
-        "tagline": "Pine forest and boating",
-        "image": "https://source.unsplash.com/featured/?kodaikanal",
+        "name": "Kakkayam Dam",
+        "tagline": "Scenic dam with nature trails and waterfalls",
+        "image": "https://source.unsplash.com/featured/?kakkayam,kozhikode"
     },
     {
-        "name": "Thekkady",
-        "tagline": "Periyar wildlife and boating",
-        "image": "https://source.unsplash.com/featured/?thekkady,wildlife",
+        "name": "Peruvannamuzhi Dam & Eco Park",
+        "tagline": "Eco-tourism spot with boating and garden",
+        "image": "https://source.unsplash.com/featured/?peruvannamuzhi,dam"
     },
     {
-        "name": "Goa",
-        "tagline": "Clean beaches and forts",
-        "image": "https://source.unsplash.com/featured/?goa,beach",
+        "name": "Mishkal Mosque",
+        "tagline": "One of the oldest mosques with timber architecture",
+        "image": "https://source.unsplash.com/featured/?mishkal,mosque"
     },
     {
-        "name": "Pondicherry",
-        "tagline": "French‑style town and peaceful vibes",
-        "image": "https://source.unsplash.com/featured/?pondicherry,beach",
+        "name": "Regional Science Centre & Planetarium",
+        "tagline": "Fun learning for kids with shows and exhibits",
+        "image": "https://source.unsplash.com/featured/?science,planetarium"
     },
+    {
+        "name": "Kirtads Museum",
+        "tagline": "Tribal life and heritage museum",
+        "image": "https://source.unsplash.com/featured/?kirtads,museum"
+    },
+    {
+        "name": "Vellari Mala",
+        "tagline": "Hidden hill spot for nature lovers and trekking",
+        "image": "https://source.unsplash.com/featured/?vellarimala,kozhikode"
+    }
 ]
 
-# ---------------- UI ---------------- #
-st.title("Chakkalakkal NFamily Trip")
-st.markdown(
-    "Plan your next **family getaway**. Click **Suggest a Trip** "
-    "and let us pick a destination for you!"
-)
+# --- Suggestion Button ---
+if st.button("🎒 Suggest a Kozhikode Trip"):
+    pick = random.choice(destinations)
+    st.success(f"🏞️ **{pick['name']}** – {pick['tagline']}")
+    st.image(pick["image"], use_column_width=True)
 
-if st.button("🎒 Suggest a Trip"):
-    dest = random.choice(DESTINATIONS)
-    st.success(f"🏖️ **{dest['name']}** – {dest['tagline']}")
-    st.image(dest["image"], use_column_width=True)
-
+# --- Footer ---
 st.markdown("---")
-st.caption("© 2025 Chakkalakkal NFamily Trip")
+st.caption("© 2025 Chakkalakkal NFamily Trip – Kozhikode Edition")
