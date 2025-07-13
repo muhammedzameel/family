@@ -4,7 +4,7 @@ import streamlit as st
 
 # ---------------- Page setup ---------------- #
 st.set_page_config(
-    page_title="Chakkalakkal NFamily Trip",
+    page_title="Chakkalakkal Family Trip",
     page_icon="🎒",
     layout="centered",
 )
