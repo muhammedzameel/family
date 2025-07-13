@@ -26,11 +26,6 @@ destinations = [
         "image": "https://source.unsplash.com/featured/?mananchira,kozhikode"
     },
     {
-        "name": "Sarovaram Bio Park",
-        "tagline": "Family-friendly boating and green park",
-        "image": "https://source.unsplash.com/featured/?sarovaram,kozhikode"
-    },
-    {
         "name": "Kadalundi Bird Sanctuary",
         "tagline": "Birdwatching and peaceful backwaters",
         "image": "https://source.unsplash.com/featured/?kadalundi,birds"
